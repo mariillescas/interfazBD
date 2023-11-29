@@ -26,6 +26,7 @@ import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JCheckBox;
+import javax.swing.ImageIcon;
 public class V4 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -74,15 +75,22 @@ public class V4 extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel_2 = new JLabel("Crear Tabla");
-		lblNewLabel_2.setBounds(172, 5, 89, 21);
+		lblNewLabel_2.setBounds(245, 5, 89, 21);
 		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 17));
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		panel.add(lblNewLabel_2);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setForeground(new Color(255, 255, 255));
+		comboBox.setBackground(new Color(128, 128, 192));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Menú", "Crear nuevo BD", "Cerrar conexión ", "Salir"}));
 		comboBox.setBounds(10, 6, 106, 22);
 		panel.add(comboBox);
+		
+		JLabel lblNewLabel_8 = new JLabel("");
+		lblNewLabel_8.setIcon(new ImageIcon(V4.class.getResource("/ventana1/inicio.png")));
+		lblNewLabel_8.setBounds(355, 5, 46, 29);
+		panel.add(lblNewLabel_8);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(128, 128, 128));

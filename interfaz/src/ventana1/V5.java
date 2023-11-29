@@ -32,6 +32,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import java.sql.Connection;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 
 public class V5 extends JFrame {
 
@@ -84,19 +85,26 @@ public class V5 extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("Crear tabla");
-		lblNewLabel_1.setBounds(174, 5, 85, 21);
+		JLabel lblNewLabel_1 = new JLabel("Insertar registro");
+		lblNewLabel_1.setBounds(219, 5, 139, 21);
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 17));
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		panel_1.add(lblNewLabel_1);
 		
 		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setForeground(new Color(255, 255, 255));
+		comboBox_3.setBackground(new Color(128, 128, 192));
 		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Menú", "Crear nuevo BD", "Cerrar conexión ", "Salir"}));
-		comboBox_3.setBounds(10, 6, 131, 22);
+		comboBox_3.setBounds(10, 6, 117, 22);
 		panel_1.add(comboBox_3);
 		
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setIcon(new ImageIcon(V5.class.getResource("/ventana1/inicio.png")));
+		lblNewLabel_6.setBounds(378, 5, 46, 32);
+		panel_1.add(lblNewLabel_6);
+		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(128, 128, 255));
+		panel.setBackground(new Color(0, 128, 192));
 		panel.setBounds(142, 41, 292, 209);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -125,16 +133,10 @@ public class V5 extends JFrame {
 		panel.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("PK");
-		lblNewLabel_5.setBounds(207, 34, 29, 14);
+		lblNewLabel_5.setBounds(224, 34, 29, 14);
 		lblNewLabel_5.setForeground(new Color(192, 192, 192));
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 12));
 		panel.add(lblNewLabel_5);
-		
-		JLabel lblNewLabel_6 = new JLabel("FK");
-		lblNewLabel_6.setBounds(238, 34, 24, 14);
-		lblNewLabel_6.setForeground(new Color(192, 192, 192));
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 12));
-		panel.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("NN");
 		lblNewLabel_7.setBounds(263, 34, 29, 14);
@@ -157,7 +159,7 @@ public class V5 extends JFrame {
 		panel.add(LONGITUD);
 		
 		JCheckBox PK = new JCheckBox("");
-		PK.setBounds(207, 55, 21, 23);
+		PK.setBounds(224, 55, 21, 23);
 		panel.add(PK);
 		
 		
@@ -166,7 +168,7 @@ public class V5 extends JFrame {
 		NN.setBounds(263, 55, 21, 23);
 		panel.add(NN);
 		
-		JButton CREAR = new JButton("Crear");
+		JButton CREAR = new JButton("Insertar");
 		CREAR.setBounds(23, 175, 89, 23);
 		CREAR.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
@@ -195,8 +197,9 @@ public class V5 extends JFrame {
 						    }
 						    statement.executeUpdate(sql);
 						 System.out.println("Atributo creado con éxito.");
-						 V6 v6Frame = new V6(conexion, nombreBaseDatos, nombreTabla);
-		                    v6Frame.setVisible(true);
+						 v6 V6Frame = new v6(nombreTabla, nombreTabla);
+						    V6Frame.setVisible(true);
+						    dispose();                    
 		                    dispose();
 					} catch (SQLException e1) {
 						// TODO Auto-generated catch block
@@ -215,7 +218,14 @@ public class V5 extends JFrame {
 		
 		    
 
-		JButton btnNewButton_1 = new JButton("Regresar");
+		JButton btnNewButton_1 = new JButton("Ver tabla");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 v6 V6Frame = new v6(nombreTabla, nombreTabla);
+				    V6Frame.setVisible(true);
+				    dispose();
+			}
+		});
 		btnNewButton_1.setBounds(173, 175, 89, 23);
 		panel.add(btnNewButton_1);
 		
@@ -224,9 +234,15 @@ public class V5 extends JFrame {
 			
 
 		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(0, 0, 0));
 		panel_2.setBounds(0, 41, 142, 209);
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_8 = new JLabel("");
+		lblNewLabel_8.setIcon(new ImageIcon(V5.class.getResource("/ventana1/2QZ9.gif")));
+		lblNewLabel_8.setBounds(0, 0, 142, 209);
+		panel_2.add(lblNewLabel_8);
 		
 		
 	

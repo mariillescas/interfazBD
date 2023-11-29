@@ -21,6 +21,7 @@ import javax.swing.SwingUtilities;
 import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class V3 extends JFrame {
 
@@ -58,8 +59,8 @@ public class V3 extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(0, 0, 0));
 		panel.setBounds(0, 0, 434, 51);
+		panel.setBackground(new Color(0, 0, 0));
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -70,13 +71,20 @@ public class V3 extends JFrame {
 		panel.add(lblNewLabel);
 		
 		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setForeground(new Color(255, 255, 255));
+		comboBox_1.setBackground(new Color(128, 128, 192));
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Menú", "Cerrar Conexión", "Salir"}));
 		comboBox_1.setBounds(10, 16, 95, 22);
 		panel.add(comboBox_1);
 		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(V3.class.getResource("/ventana1/inicio.png")));
+		lblNewLabel_4.setBounds(360, 11, 46, 29);
+		panel.add(lblNewLabel_4);
+		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(192, 192, 192));
 		panel_1.setBounds(108, 49, 326, 212);
+		panel_1.setBackground(new Color(192, 192, 192));
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -132,6 +140,11 @@ public class V3 extends JFrame {
 		});
 		crear.setBounds(129, 162, 89, 23);
 		panel_1.add(crear);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setBounds(0, 49, 109, 201);
+		lblNewLabel_3.setIcon(new ImageIcon(V3.class.getResource("/ventana1/Procesando.gif")));
+		contentPane.add(lblNewLabel_3);
 		
 		;
 		

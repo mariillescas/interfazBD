@@ -23,6 +23,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import ventana1.V3;
+import javax.swing.ImageIcon;
 
 
 public class F2 extends JFrame {
@@ -75,6 +76,8 @@ public class F2 extends JFrame {
 		panel.setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setForeground(new Color(255, 255, 255));
+		comboBox.setBackground(new Color(128, 128, 192));
 		comboBox.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    }    // Verificar qué elemento se seleccionó en el JComboBox
@@ -84,14 +87,19 @@ public class F2 extends JFrame {
 
 
 
-		comboBox.setBounds(10, 11, 120, 22);
+		comboBox.setBounds(10, 11, 117, 22);
 		panel.add(comboBox);
 		
 		JLabel lblNewLabel_3 = new JLabel("HACER CONEXIÓN");
 		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 17));
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
-		lblNewLabel_3.setBounds(140, 13, 178, 14);
+		lblNewLabel_3.setBounds(153, 13, 178, 14);
 		panel.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(F2.class.getResource("/ventana1/inicio.png")));
+		lblNewLabel_4.setBounds(341, 11, 48, 26);
+		panel.add(lblNewLabel_4);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(128, 128, 128));
@@ -99,27 +107,36 @@ public class F2 extends JFrame {
 		contentPane.add(panel_1);
 		
 		JLabel lblPuerto = new JLabel("PUERTO");
+		lblPuerto.setBounds(127, 42, 57, 14);
 		
 		JLabel lblNewLabel = new JLabel("HOST");
+		lblNewLabel.setBounds(144, 11, 36, 14);
 		
 		JLabel lblNewLabel_1 = new JLabel("PASSWORD");
+		lblNewLabel_1.setBounds(108, 103, 76, 14);
 		
 		password = new JTextField();
+		password.setBounds(205, 100, 114, 20);
 		password.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("USER");
+		lblNewLabel_2.setBounds(144, 72, 40, 14);
 		
 		host = new JTextField();
+		host.setBounds(205, 8, 114, 20);
 		host.setColumns(10);
 		
 		puerto = new JTextField();
+		puerto.setBounds(205, 39, 114, 20);
 		puerto.setColumns(10);
 		
 		user = new JTextField();
+		user.setBounds(205, 69, 114, 20);
 		
 		user.setColumns(10);
 		
 		JButton conectar = new JButton("CONECTAR");
+		conectar.setBounds(86, 152, 98, 23);
 		conectar.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        String jdbcURL = "jdbc:mysql://" + host.getText() + ":" + puerto.getText() + "/";
@@ -149,65 +166,22 @@ public class F2 extends JFrame {
 
 		
 		JButton btnNewButton_1 = new JButton("TEST");
-		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(153)
-							.addComponent(lblNewLabel))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panel_1.createSequentialGroup()
-									.addGap(124)
-									.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
-										.addComponent(lblNewLabel_2)
-										.addComponent(lblPuerto)
-										.addComponent(lblNewLabel_1)))
-								.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-									.addContainerGap(109, Short.MAX_VALUE)
-									.addComponent(conectar)
-									.addPreferredGap(ComponentPlacement.RELATED)))
-							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panel_1.createSequentialGroup()
-									.addGap(18)
-									.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(user)
-										.addComponent(puerto)
-										.addComponent(host)
-										.addComponent(password, GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)))
-								.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-									.addComponent(btnNewButton_1)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(101, Short.MAX_VALUE))
-		);
-		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(8)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel)
-						.addComponent(host, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblPuerto)
-						.addComponent(puerto, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(10)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(user, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(password, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_1))
-					.addPreferredGap(ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnNewButton_1)
-						.addComponent(conectar))
-					.addGap(24))
-		);
-		panel_1.setLayout(gl_panel_1);
+		btnNewButton_1.setBounds(262, 152, 76, 23);
+		panel_1.setLayout(null);
+		panel_1.add(lblNewLabel);
+		panel_1.add(lblNewLabel_2);
+		panel_1.add(lblPuerto);
+		panel_1.add(lblNewLabel_1);
+		panel_1.add(conectar);
+		panel_1.add(user);
+		panel_1.add(puerto);
+		panel_1.add(host);
+		panel_1.add(password);
+		panel_1.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon(F2.class.getResource("/ventana1/Y1Mo.gif")));
+		lblNewLabel_5.setBounds(0, 0, 76, 199);
+		panel_1.add(lblNewLabel_5);
 	}
 }

@@ -65,11 +65,14 @@ public class V1 extends JFrame {
 		panel.add(lblNewLabel);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(UIManager.getColor("CheckBox.focus"));
+		panel_1.setBackground(new Color(0, 128, 192));
 		panel_1.setBounds(10, 10, 145, 240);
 		contentPane.add(panel_1);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(32, 11, 79, 20);
+		comboBox.setBackground(new Color(0, 0, 0));
+		comboBox.setForeground(new Color(255, 255, 255));
 		comboBox.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        // Verificar qué elemento se seleccionó en el JComboBox
@@ -88,8 +91,22 @@ public class V1 extends JFrame {
 		        }
 		    }
 		});
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("Bienvenido");
+		lblNewLabel_2.setForeground(new Color(0, 0, 0));
+		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.PLAIN, 21));
+		lblNewLabel_2.setBounds(10, 127, 135, 27);
+		panel_1.add(lblNewLabel_2);
 		panel_1.add(comboBox);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Menú", "CONEXION", "SALIR"}));
+		
+		JLabel lblNewLabel_3 = new JLabel("SGBD");
+		lblNewLabel_3.setBackground(new Color(0, 0, 0));
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setFont(new Font("Verdana", Font.BOLD, 18));
+		lblNewLabel_3.setBounds(47, 89, 70, 27);
+		panel_1.add(lblNewLabel_3);
 
 		
 		JPanel panel_2 = new JPanel();
@@ -98,9 +115,9 @@ public class V1 extends JFrame {
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(V1.class.getResource("/ventana1/im1.png")));
-		lblNewLabel_1.setBounds(38, 27, 222, 156);
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(V1.class.getResource("/ventana1/sql.gif")));
+		lblNewLabel_1.setBounds(0, 0, 281, 194);
 		panel_2.add(lblNewLabel_1);
 	}
 }
